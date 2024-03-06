@@ -1,0 +1,21 @@
+<%= form_with(model: @booking, local: true) do |form| %>
+  <%= form.label :first_name %>
+  <%= form.text_field :first_name %>
+
+  <%= form.label :last_name %>
+  <%= form.text_field :last_name %>
+
+  <%= form.label :animal_name %>
+  <%= form.text_field :animal_name %>
+
+  <%= form.label :animal_type %>
+  <%= form.select :animal_type, Booking.animal_types.keys %>
+
+  <%= form.label :hours_requested %>
+  <%= form.number_field :hours_requested, in: 2..8 %>
+
+  <%= form.label :date_of_service %>
+  <%= form.date_field :date_of_service %>
+
+  <%= form.submit %>
+<% end %>
