@@ -1,4 +1,8 @@
 en:
+  activerecord:
+    errors:
+      messages:
+        blank: "can't be blank"
   controllers:
     bookings:
       create:
