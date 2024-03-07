@@ -1,21 +1,39 @@
-<%= form_with(model: @booking, local: true) do |form| %>
-  <%= form.label :first_name %>
-  <%= form.text_field :first_name %>
+<%= form_with(model: @booking, local: true, class: "booking-form") do |form| %>
+  <div class="form-group">
+    <%= form.label :first_name, class: "form-label" %>
+    <%= form.text_field :first_name, class: "form-input", placeholder: "Enter your first name", aria: { describedby: "first-name-error" } %>
+    <%= render partial: 'shared/form_field_error', locals: { errors: @booking.errors, field: :first_name } %>
+  </div>
 
-  <%= form.label :last_name %>
-  <%= form.text_field :last_name %>
+  <div class="form-group">
+    <%= form.label :last_name, class: "form-label" %>
+    <%= form.text_field :last_name, class: "form-input", placeholder: "Enter your last name", aria: { describedby: "last-name-error" } %>
+    <%= render partial: 'shared/form_field_error', locals: { errors: @booking.errors, field: :last_name } %>
+  </div>
 
-  <%= form.label :animal_name %>
-  <%= form.text_field :animal_name %>
+  <div class="form-group">
+    <%= form.label :animal_name, class: "form-label" %>
+    <%= form.text_field :animal_name, class: "form-input", placeholder: "Enter the animal's name", aria: { describedby: "animal-name-error" } %>
+    <%= render partial: 'shared/form_field_error', locals: { errors: @booking.errors, field: :animal_name } %>
+  </div>
 
-  <%= form.label :animal_type %>
-  <%= form.select :animal_type, Booking.animal_types.keys %>
+  <div class="form-group">
+    <%= form.label :animal_type, class: "form-label" %>
+    <%= form.select :animal_type, Booking.animal_types.keys, {}, class: "form-select", aria: { describedby: "animal-type-error" } %>
+    <%= render partial: 'shared/form_field_error', locals: { errors: @booking.errors, field: :animal_type } %>
+  </div>
 
-  <%= form.label :hours_requested %>
-  <%= form.number_field :hours_requested, in: 2..8 %>
+  <div class="form-group">
+    <%= form.label :hours_requested, class: "form-label" %>
+    <%= form.number_field :hours_requested, in: 2..8, class: "form-input", placeholder: "Enter hours requested", aria: { describedby: "hours-requested-error" } %>
+    <%= render partial: 'shared/form_field_error', locals: { errors: @booking.errors, field: :hours_requested } %>
+  </div>
 
-  <%= form.label :date_of_service %>
-  <%= form.date_field :date_of_service %>
+  <div class="form-group">
+    <%= form.label :date_of_service, class: "form-label" %>
+    <%= form.date_field :date_of_service, class: "form-input", aria: { describedby: "date-of-service-error" } %>
+    <%= render partial: 'shared/form_field_error', locals: { errors: @booking.errors, field: :first_name } %>
+  </div>
 
-  <%= form.submit %>
+  <%= form.submit "Submit", class: "btn btn-primary" %>
 <% end %>

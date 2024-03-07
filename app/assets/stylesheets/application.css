@@ -13,3 +13,89 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover, a.active{
+    background-color: #fff;
+    color: #3498db;
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.flash {
+    width: 100vw;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.flash.notice {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash.alert {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.flash.warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.flash.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.text-danger {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-top: 5px;
+}

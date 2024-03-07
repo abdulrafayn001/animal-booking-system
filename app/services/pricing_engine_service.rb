@@ -1,4 +1,4 @@
-class PricingEngine
+class PricingEngineService
   BASE_CHARGE = 20
 
   def self.calculate_cost(animal_type, hours_requested)

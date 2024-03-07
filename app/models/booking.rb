@@ -5,6 +5,6 @@ class Booking < ApplicationRecord
   validates :hours_requested, numericality: { greater_than_or_equal_to: 2, less_than_or_equal_to: 8 }
 
   def calculate_cost
-    PricingEngine.calculate_cost(animal_type, hours_requested)
+    PricingEngineService.calculate_cost(animal_type, hours_requested)
   end
 end

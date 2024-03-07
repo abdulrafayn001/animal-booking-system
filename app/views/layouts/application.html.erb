@@ -11,6 +11,25 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <div class="container">
+        <h1>Your Booking App</h1>
+        <nav>
+          <%= link_to "All Bookings", admin_bookings_path, class: ('active' if current_page?(admin_bookings_path)) %>
+          <%= link_to "New Booking", new_booking_path, class: ('active' if current_page?(new_booking_path)) %>
+        </nav>
+      </div>
+    </header>
+    <%= render 'shared/flash_messages' %>
+    <main class="container">
+      <%= yield %>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; <%= Time.current.year %> Your Booking App. All rights reserved.</p>
+      </div>
+    </footer>
+
   </body>
 </html>

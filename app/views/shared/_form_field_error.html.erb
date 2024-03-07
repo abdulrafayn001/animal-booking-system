@@ -1,0 +1,3 @@
+<% if errors.any? && errors.messages[field].present? %>
+  <small id="<%= "#{field}-error" %>" class="form-text text-danger"><%= errors.messages[field].first %></small>
+<% end %>
